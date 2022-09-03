@@ -36,18 +36,21 @@ class _NextPageState extends State<NextPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "Lottery Game",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 23,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
+                children:  [
+                  RichText(text: TextSpan(
+                    text: "Lottery" ,
+                    style: Theme.of(context).textTheme.bodyText1?.copyWith(fontSize: 30,color: Colors.white),
+                    children: const [
+
+                      TextSpan(
+                        text: " Game",style: TextStyle(color: Colors.deepPurple,fontSize: 30)
+                      )
+                    ]
+                  )),
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text(
+                  const Text(
                     "Created By Saeed Afridi",
                     style: TextStyle(
                         fontFamily: 'DynaPuff',
@@ -70,7 +73,7 @@ class _NextPageState extends State<NextPage> {
 
                   child: Column(
                     children: [
-                      SizedBox(height: 100,),
+                      const SizedBox(height: 100,),
                       const Text("Please select your favorite Number \n between  0 to 9 ",textAlign: TextAlign.center,),
                       const SizedBox(
                         height: 10,
@@ -109,7 +112,7 @@ class _NextPageState extends State<NextPage> {
 
                         child: intValue.toString() == _Textcontroler.text
                             ? Container(
-                             decoration: BoxDecoration(
+                             decoration: const BoxDecoration(
                                color: Color(0xa95b83c2)
                              ),
                               child: Column(
@@ -222,7 +225,7 @@ showAlertDialog(BuildContext context) {
   );
 
   AlertDialog alert = AlertDialog(
-    title: const Text("Inter Your Lucky Number "),
+    title: const Text("Enter Your Lucky Number "),
     content: Container(
       child: TextFormField(
         autofocus:true,
@@ -232,7 +235,7 @@ showAlertDialog(BuildContext context) {
         decoration: InputDecoration(
             fillColor: const Color(0xffF8F9FA),
             filled: true,
-            hintText: "Inter Your Lucky Number  ",
+            hintText: "Enter Your Lucky Number  ",
             border: OutlineInputBorder(
               borderSide: const BorderSide(color: Colors.black12),
               borderRadius: BorderRadius.circular(20),
@@ -256,11 +259,11 @@ showAlertDialog(BuildContext context) {
   );
 }
 void showSnackBar(BuildContext context) {
-  final snackBar = SnackBar(
+  final snackBar = const SnackBar(
     content: Text('Please First Select Your Favorite Number '),
-    backgroundColor:  Color(0xff00203F),
+    backgroundColor:  const Color(0xff00203F),
     behavior: SnackBarBehavior.floating,
-    margin: EdgeInsets.only(bottom: 10,left: 30,right: 30),
+    margin: const EdgeInsets.only(bottom: 10,left: 30,right: 30),
     elevation: 20,
       shape: StadiumBorder()
   );
